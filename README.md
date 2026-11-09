@@ -2,7 +2,7 @@
 
 Practice tools for Belmont Hill students: quizzes, flashcards, practice labs, and test prep, built by the **Belmont Hill AI Club**. Browse by subject on the site.
 
-**Site:** https://palandjianpe.github.io/BH-AI/
+**Site:** https://belmonthill-ai.github.io/
 **Want to add yours?** Read [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## How it's organized

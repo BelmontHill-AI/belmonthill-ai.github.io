@@ -2,7 +2,7 @@
   "title": "BH·AI Study Tools",
   "club": "Belmont Hill AI Club",
   "tagline": "Practice tools built by students, for students. Pick a subject and start studying.",
-  "repoUrl": "https://github.com/palandjianpe/BH-AI",
+  "repoUrl": "https://github.com/BelmontHill-AI/belmonthill-ai.github.io",
   "subjects": [
     { "name": "Math", "color": "blue" },
     { "name": "Science", "color": "green" },

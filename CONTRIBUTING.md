@@ -10,8 +10,8 @@ Built something that helped you study? Put it on the club site so every Belmont 
 
 1. Clone the repo, or open it in Claude Code, Cursor, or whichever AI tool you use:
    ```bash
-   git clone https://github.com/palandjianpe/BH-AI.git
-   cd BH-AI
+   git clone https://github.com/BelmontHill-AI/belmonthill-ai.github.io.git
+   cd belmonthill-ai.github.io
    ```
 2. Paste this prompt and fill in the blanks:
 
