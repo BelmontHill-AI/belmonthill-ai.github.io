@@ -1,18 +1,12 @@
 # Adding your study tool
 
-Built something that helped you study? Put it on the club site so every Belmont Hill student can use it. There are three ways to do it, from easiest to most involved.
+Built something that helped you study? Put it on the club site so every Belmont Hill student can use it.
+
+**Only AI Club members can add tools.** You'll need a GitHub account (use your belmonthill.org email) that has accepted the invite to this repo. If you're not in the club but have something to share, talk to a club member.
 
 ---
 
-## Option A: just send the link (2 minutes)
-
-[Open an "Add my study tool" issue](https://github.com/palandjianpe/BH-AI/issues/new?template=add-project.yml), fill in the form, and paste your Claude artifact link. A club member will add it.
-
----
-
-## Option B: let your AI tool do it (recommended)
-
-You'll need a GitHub account (use your belmonthill.org email) that has accepted the club's invite.
+## Option A: let your AI tool do it (recommended)
 
 1. Clone the repo, or open it in Claude Code, Cursor, or whichever AI tool you use:
    ```bash
@@ -25,7 +19,7 @@ You'll need a GitHub account (use your belmonthill.org email) that has accepted 
    > - Title: ___
    > - Subject: ___ (Course: ___)
    > - What it does: ___
-   > - My name for the site: ___ (first name + last initial)
+   > - My full name for the credit: ___
    > - Link: ___ *(or: "here's the HTML, host it in the repo and port it off window.claude")*
    >
    > Run the build check, show me a local preview, then open a pull request.
@@ -35,7 +29,7 @@ You'll need a GitHub account (use your belmonthill.org email) that has accepted 
 
 ---
 
-## Option C: do it by hand on github.com
+## Option B: do it by hand on github.com
 
 1. On the repo page, go to **Add file → Create new file**.
 2. Name it `projects/your-project-name/project.json`. Typing the `/` creates the folder.
@@ -62,7 +56,7 @@ Start with a link. Move to hosted when you have time.
 ## Ground rules
 
 - **Check your answers.** A wrong answer key is worse than no answer key.
-- Use **first name + last initial** on the site, because it's public.
-- No API keys, passwords, or personal info. Everything in this repo is public.
+- Put your **full name** in `authors` so you get credit.
+- No API keys, passwords, or other personal info beyond your name. Everything in this repo is public.
 - Write your own questions. Don't paste in textbook pages or teachers' tests.
 - Only change your own project folder.

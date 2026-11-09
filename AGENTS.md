@@ -33,7 +33,7 @@ A project is one of two kinds:
      "subject": "Science",
      "course": "AP Biology",
      "description": "Under 200 characters. Say what a student can DO with it.",
-     "authors": ["First L."],
+     "authors": ["First Last"],
      "formats": ["Flashcards"],
      "tags": ["cell membrane", "unit 2"],
      "url": "https://claude.ai/artifact/...",
@@ -43,7 +43,7 @@ A project is one of two kinds:
 
    - `subject` must be **exactly** one of the names in `site.json` → `subjects`.
    - `formats` must come from `site.json` → `formats`.
-   - `authors`: use **first name + last initial** only, because the site is public. Ask the student for it; don't guess.
+   - `authors`: the student's **full name**, as they want it credited. Ask them; don't guess. List everyone who built it.
    - `added`: use today's date.
    - `course` and `tags` are optional. Leave out `url` for a hosted project.
 3. For a hosted project, add `projects/<slug>/index.html` (see the rules below). You can start from `templates/new-project/index.html`.
@@ -71,7 +71,7 @@ Only edit the project the student owns, unless they say otherwise. Keep `project
 ## Rules
 
 - **Accuracy matters more than polish.** Students will study from this. When you generate questions or answers, double-check them, and tell the student to verify anything you're unsure of against their class notes.
-- No secrets, API keys, tracking scripts, or personal info beyond first name + last initial.
+- No secrets, API keys, tracking scripts, or personal info beyond the authors' names.
 - No copyrighted textbook passages or full test banks pasted in. Write original questions, or use short quotes for analysis.
 - Don't change `site.json`, `index.html`, `assets/`, `scripts/`, or `.github/` as part of adding a project. If a new subject or format is really needed, say so in the PR description so a club leader can decide.
 - Keep pages readable on a phone, and make sure they work in light and dark mode.

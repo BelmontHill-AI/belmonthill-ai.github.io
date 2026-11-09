@@ -30,6 +30,7 @@ Then open http://localhost:8000.
 
 ## For club leaders
 
-- **Adding a subject or format:** edit `site.json`, and also update the dropdown in `.github/ISSUE_TEMPLATE/add-project.yml`.
+- **Who can add tools:** only repo collaborators (AI Club members). Outsiders can view the code but can't change the site.
+- **Adding a subject or format:** edit `site.json`.
 - **Filter links to share:** `?subject=Science`, `?q=DBQ`, or combine them, like `?subject=Math&q=calc`.
 - **One-time setup:** in Settings → Pages, set **Source** to **GitHub Actions**.

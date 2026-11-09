@@ -81,7 +81,7 @@ for (const slug of slugs) {
   }
 
   if (!Array.isArray(p.authors) || p.authors.length === 0 || !p.authors.every((a) => typeof a === "string" && a.trim())) {
-    fail(`"authors" must be a list with at least one name, e.g. ["Ari I."].`);
+    fail(`"authors" must be a list with at least one name, e.g. ["Ari Itzkovits"].`);
   }
 
   if (!Array.isArray(p.formats) || p.formats.length === 0) {

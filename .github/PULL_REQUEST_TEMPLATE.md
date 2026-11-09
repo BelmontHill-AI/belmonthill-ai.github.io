@@ -6,7 +6,7 @@
 
 - [ ] My folder is `projects/<lowercase-with-dashes>/` and has a `project.json`
 - [ ] `subject` is one of the options in `site.json`
-- [ ] Authors are first name + last initial (e.g. "Ari I."), not full names
+- [ ] `authors` lists everyone who built it, with full names
 - [ ] If I added an `index.html`: it opens on its own, has the "← All study tools" link, and has no `window.claude` or API keys
 - [ ] I only changed files inside my own project folder (or I explained why below)
 - [ ] I checked the answers are correct. Wrong answers hurt people studying.
