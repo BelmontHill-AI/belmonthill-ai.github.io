@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unit 3 Practice: Derivatives</title>
+  <!--
+    BH·AI starter template. Copy this folder to projects/<your-slug>/ and edit.
+    Rules (see AGENTS.md):
+      • One self-contained file. No API keys, no claude.ai-only runtime calls.
+      • Save progress with localStorage, wrapped in try/catch.
+      • Keep the "All study tools" link so students can get back.
+  -->
+  <style>
+    :root { --bg:#faf8f5; --surface:#fff; --ink:#1d1b19; --muted:#6b655e; --line:#e6e1da; --accent:#7a1f2b; --good:#2a7a4b; --bad:#a8322d; color-scheme: light; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#151312; --surface:#1e1c1a; --ink:#efebe6; --muted:#a49d94; --line:#34302c; --accent:#d4707c; --good:#8fd0a6; --bad:#f0a19c; color-scheme: dark; } }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+    .wrap { max-width:680px; margin:0 auto; padding:24px 16px 64px; }
+    .back { color:var(--muted); text-decoration:none; font-size:14px; }
+    .back:hover { color:var(--accent); }
+    h1 { font-size:32px; line-height:1.15; margin:16px 0 4px; letter-spacing:-.01em; }
+    .sub { color:var(--muted); margin:0 0 24px; }
+    .card { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:20px; }
+    .meta { display:flex; justify-content:space-between; color:var(--muted); font-size:14px; margin-bottom:12px; }
+    .prompt { font-size:20px; font-weight:600; margin:0 0 16px; }
+    .choices { display:grid; gap:8px; }
+    .choice { font:inherit; text-align:left; padding:12px 14px; border-radius:10px; border:1px solid var(--line); background:var(--bg); color:inherit; cursor:pointer; }
+    .choice:hover:not(:disabled) { border-color:var(--muted); }
+    .choice.right { border-color:var(--good); color:var(--good); font-weight:600; }
+    .choice.wrong { border-color:var(--bad); color:var(--bad); }
+    .why { margin:16px 0 0; padding:12px 14px; border-left:3px solid var(--accent); background:var(--bg); border-radius:0 8px 8px 0; }
+    .actions { display:flex; gap:8px; justify-content:flex-end; margin-top:16px; }
+    .btn { font:inherit; font-weight:600; padding:10px 16px; border-radius:10px; border:0; background:var(--accent); color:#fff; cursor:pointer; }
+    .btn.ghost { background:transparent; color:var(--muted); border:1px solid var(--line); }
+    :focus-visible { outline:2px solid #2f5bd3; outline-offset:2px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <a class="back" href="../../">← All study tools</a>
+    <h1>Unit 3 Practice: Derivatives</h1>
+    <p class="sub">AP Calculus AB · Pick an answer to see the explanation.</p>
+
+    <div class="card" id="app" aria-live="polite"></div>
+  </main>
+
+  <script>
+    // ---- Edit your questions here -------------------------------------------
+    const QUESTIONS = [
+      {
+        prompt: "d/dx [x³]",
+        choices: ["3x²", "x²", "3x³", "x⁴/4"],
+        answer: 0,
+        why: "Power rule: bring the exponent down and subtract one, so 3·x²."
+      },
+      {
+        prompt: "d/dx [sin(2x)]",
+        choices: ["cos(2x)", "2cos(2x)", "−2cos(2x)", "2sin(x)"],
+        answer: 1,
+        why: "Chain rule: the derivative of sin(u) is cos(u)·u′, and u′ = 2."
+      },
+      {
+        prompt: "d/dx [eˣ · x]",
+        choices: ["eˣ", "x·eˣ", "eˣ(x + 1)", "eˣ + 1"],
+        answer: 2,
+        why: "Product rule: eˣ·x + eˣ·1 = eˣ(x + 1)."
+      }
+    ];
+    // --------------------------------------------------------------------------
+
+    // Progress is saved in this browser only. Wrapped in try/catch because
+    // storage can be blocked (private windows, school-managed browsers).
+    const KEY = "bhai:" + location.pathname;
+    const load = () => { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch { return {}; } };
+    const save = (s) => { try { localStorage.setItem(KEY, JSON.stringify(s)); } catch {} };
+
+    let s = Object.assign({ i: 0, correct: 0, done: false }, load());
+    const app = document.getElementById("app");
+    const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
+
+    function render() {
+      if (s.done || s.i >= QUESTIONS.length) {
+        app.innerHTML = `
+          <p class="prompt">You got ${s.correct} of ${QUESTIONS.length}.</p>
+          <div class="actions"><button class="btn" id="again">Start over</button></div>`;
+        document.getElementById("again").onclick = () => { s = { i: 0, correct: 0, done: false }; save(s); render(); };
+        return;
+      }
+      const q = QUESTIONS[s.i];
+      app.innerHTML = `
+        <div class="meta"><span>Question ${s.i + 1} of ${QUESTIONS.length}</span><span>${s.correct} correct</span></div>
+        <p class="prompt">${esc(q.prompt)}</p>
+        <div class="choices">${q.choices.map((c, k) => `<button class="choice" data-k="${k}">${esc(c)}</button>`).join("")}</div>
+        <div id="after"></div>`;
+      app.querySelectorAll(".choice").forEach((b) => b.onclick = () => pick(+b.dataset.k));
+    }
+
+    function pick(k) {
+      const q = QUESTIONS[s.i];
+      app.querySelectorAll(".choice").forEach((b, j) => {
+        b.disabled = true;
+        if (j === q.answer) b.classList.add("right");
+        else if (j === k) b.classList.add("wrong");
+      });
+      if (k === q.answer) s.correct++;
+      s.i++;
+      if (s.i >= QUESTIONS.length) s.done = true;
+      save(s);
+      document.getElementById("after").innerHTML = `
+        <p class="why">${esc(q.why)}</p>
+        <div class="actions"><button class="btn" id="next">${s.done ? "See score" : "Next"}</button></div>`;
+      const next = document.getElementById("next");
+      next.onclick = render;
+      next.focus();
+    }
+
+    render();
+  </script>
+</body>
+</html>

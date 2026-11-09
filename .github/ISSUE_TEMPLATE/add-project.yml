@@ -1,0 +1,44 @@
+name: Add my study tool
+description: Not comfortable with pull requests yet? Send your link here and a club member will add it.
+title: "Add: "
+labels: ["new project"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      placeholder: AP Bio Unit 2 Flashcards
+    validations:
+      required: true
+  - type: dropdown
+    id: subject
+    attributes:
+      label: Subject
+      options: [Math, Science, English, History, World Languages, Computer Science, Arts, Test Prep, College, Other]
+    validations:
+      required: true
+  - type: input
+    id: course
+    attributes:
+      label: Course
+      placeholder: AP Biology
+  - type: input
+    id: url
+    attributes:
+      label: Link to your Claude artifact (or other page)
+      placeholder: https://claude.ai/artifact/...
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: One or two sentences on what students can do with it
+    validations:
+      required: true
+  - type: input
+    id: authors
+    attributes:
+      label: Your name as it should appear (first name + last initial)
+      placeholder: Ari I.
+    validations:
+      required: true

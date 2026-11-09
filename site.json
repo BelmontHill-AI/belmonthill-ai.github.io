@@ -1,0 +1,29 @@
+{
+  "title": "BH·AI Study Tools",
+  "club": "Belmont Hill AI Club",
+  "tagline": "Practice tools built by students, for students. Pick a subject and start studying.",
+  "repoUrl": "https://github.com/palandjianpe/BH-AI",
+  "subjects": [
+    { "name": "Math", "color": "blue" },
+    { "name": "Science", "color": "green" },
+    { "name": "English", "color": "purple" },
+    { "name": "History", "color": "amber" },
+    { "name": "World Languages", "color": "teal" },
+    { "name": "Computer Science", "color": "slate" },
+    { "name": "Arts", "color": "pink" },
+    { "name": "Test Prep", "color": "red" },
+    { "name": "College", "color": "indigo" },
+    { "name": "Other", "color": "gray" }
+  ],
+  "formats": [
+    "Practice questions",
+    "Quiz",
+    "Flashcards",
+    "Study guide",
+    "Writing practice",
+    "Timeline",
+    "Practice exam",
+    "Study plan",
+    "Tool"
+  ]
+}
