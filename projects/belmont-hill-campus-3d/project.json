@@ -1,0 +1,10 @@
+{
+  "title": "Belmont Hill in 3D",
+  "subject": "Other",
+  "course": "Campus map",
+  "description": "Fly a drone or walk around a 3D model of campus built from real laser-scan, aerial-photo and map data. Jump to any building, and add labels of your own.",
+  "authors": ["Petros Palandjian"],
+  "formats": ["Tool"],
+  "tags": ["campus map", "3D", "three.js", "open data"],
+  "added": "2026-11-11"
+}

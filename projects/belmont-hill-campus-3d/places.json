@@ -1,0 +1,9 @@
+{
+  "places": [
+    { "name": "Saunders House", "x": 147.7, "y": 63.8 },
+    { "name": "Howe House", "x": 146.2, "y": 77.3 },
+    { "name": "Dining Hall", "x": 134.3, "y": 101.8 },
+    { "name": "Bolles Makerspace", "x": 115.8, "y": 103.6 },
+    { "name": "Morse Building", "x": 222.0, "y": 94.0 }
+  ]
+}
